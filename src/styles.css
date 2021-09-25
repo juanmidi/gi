@@ -1,0 +1,57 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* @import '/theme.scss'; */
+
+
+
+
+/*
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field {
+    width: 100%;
+    min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8px;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.basic-container {
+    padding: 30px;
+}
+
+
+/* HOME */
+
+
+/*
+.card-home {
+    max-width: 60%;
+}
+
+.card-home-avatar {
+    background-image: url('https://raw.githubusercontent.com/programando-ideas/cursoangular/master/imagenes/IconoCanal_Blanco.png');
+    background-size: cover;
+} 
+
+*/
