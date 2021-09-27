@@ -20,6 +20,7 @@ import { CliDialogoBorrarComponent } from './components/clientes/dialogos/cli-di
 import { JwtInterceptor } from './services/auth/jwt-interceptor';
 import { EjemploXSSComponent } from './components/ejemplo-xss/ejemplo-xss.component';
 import { EstudiantesComponent } from './components/estudiantes/estudiantes.component';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { EstudiantesComponent } from './components/estudiantes/estudiantes.compo
     HttpClientXsrfModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AutocompleteLibModule
   ],
   entryComponents: [CliDialogoComponent, CliDialogoBorrarComponent],
   providers: [

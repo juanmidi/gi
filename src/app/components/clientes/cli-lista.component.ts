@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { ICliente } from 'src/app/models/icliente';
+import { ICliente } from 'src/app/models/iCliente';
 import { Subscription } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginatorIntl, MatPaginator } from '@angular/material/paginator';

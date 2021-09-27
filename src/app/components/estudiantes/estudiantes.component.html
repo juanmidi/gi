@@ -1,1 +1,73 @@
-<p>estudiantes works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Lista</mat-card-title>
+        <mat-card-subtitle>de Estudiantes</mat-card-subtitle>
+        <mat-icon style="font-size: 50px;" aria-hidden="false" aria-label="Salir">people_alt</mat-icon>
+        
+    </mat-card-header>
+
+
+    <div class="ng-autocomplete">
+        <ng-autocomplete 
+          [data]="_estudiantes"
+          [searchKeyword]="keyword"
+          [itemTemplate]="itemTemplate"  
+          [notFoundTemplate]="notFoundTemplate"
+          >
+        </ng-autocomplete>
+        
+        <!-- (selected)='selectEvent($event)'
+        (inputChanged)='onChangeSearch($event)'
+        (inputFocused)='onFocused($event)'
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate">                                  -->
+
+        <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.apellido"></a>
+        </ng-template>
+        
+        <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+        </ng-template>
+        </div>
+
+
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="center center" *ngIf="cargando">
+            <mat-progress-spinner class="example-margin" color="primary" mode="indeterminate">
+            </mat-progress-spinner>
+        </div>
+        <div class="mat-elevation-z8">
+            <table matSort mat-table [dataSource]="estudiantes" class="mat-elevation-z8" style="width: 100%;">
+                <ng-container matColumnDef="nombre">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let est"> {{est.nombre}} </td>
+                </ng-container>
+                <ng-container matColumnDef="apellido">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef> Apellido </th>
+                    <td mat-cell *matCellDef="let est"> {{est.apellido}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef style="text-align: right;">
+                        <button mat-icon-button (click)="agregar()">
+                            <mat-icon aria-label="Agregar" aria-hidden="false">add</mat-icon>
+                        </button>
+                    </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: right;">
+                        <button mat-icon-button (click)="editar(element)">
+                            <mat-icon aria-label="Edit">edit</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="borrar(element)">
+                            <mat-icon aria-label="Delete">delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+    </mat-card-content>
+</mat-card>

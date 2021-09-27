@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnDestroy {
   IsAuthenticated = false;
-  title = 'webspacursoangular';
+  title = 'Gi';
   private subsAuth$: Subscription;
 
   constructor(

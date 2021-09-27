@@ -52,15 +52,35 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: this.formLogin.value.password,
     };
     
-    const url = environment.urlAPI + 'api/tokens-api/signin.php';
+    // original
+    // const url = environment.urlAPI + 'api/tokens-api/signin.php';
+    
+    //prueba con otro api
+    const url = environment.urlAPI + 'curso_apirest_YT/auth';
+    
+    //prueba con otro api
+    // const url = environment.urlAPI + 'api2/login';
+
+
     this.subRef$ = this.dataService.post<IResponse>(url,
       usuarioLogin)
       .subscribe(res => {
-        const token = res.body.response;
+        //api original
+        // const token = res.body.response;
+        //---
+
+        //prueba con otro api
+         const token = res.body.response;
+        //---
+
         const role = res.body.role;
         console.log('token', token);
-        this.securityService.SetAuthData(token, role);
-        this.router.navigate(['/home']);
+        if (token) {
+          this.securityService.SetAuthData(token, role);
+          this.router.navigate(['/home']);
+        } else {
+          console.log("error de usuario o contraseña");
+        }
       }, err => {
         console.log('Error en el login', err);
       });

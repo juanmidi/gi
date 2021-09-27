@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ICliente } from 'src/app/models/icliente';
+import { ICliente } from 'src/app/models/iCliente';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';

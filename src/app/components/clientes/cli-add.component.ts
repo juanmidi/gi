@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CliDialogoComponent } from './dialogos/cli-dialogo.component';
 import { Subscription } from 'rxjs';
-import { ICliente } from 'src/app/models/icliente';
+import { ICliente } from 'src/app/models/iCliente';
 import { DataService } from 'src/app/services/data.service';
 import { environment } from 'src/environments/environment';
 
